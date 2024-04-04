@@ -20,16 +20,20 @@ import {
 	UserCircleIcon,
 	UserIcon,
 } from '@heroicons/react/24/solid';
+import { MdOutlineEmail } from 'react-icons/md';
+import { FaGithub } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
 import RoomCard from '@/components/card/RoomCard';
+import Link from 'next/link';
 
 export default function Home() {
 	return (
-		<main className='flex gap-12 bg-gray-100 mx-auto max-w-[1640px] items-start '>
-			<nav className='lg:block hidden fixed w-[280px] shadow-xl bg-white  pt-8 px-6 pb-16'>
+		<main className='flex gap-12 bg-gray-100 mx-auto max-w-[1440px] items-start '>
+			<nav className='md:block hidden fixed w-[280px] shadow-xl bg-white  pt-8 px-6 h-screen'>
 				<h1 className='font-bold text-3xl text-purple-800 text-center mb-8'>
 					Gestão de Obras
 				</h1>
-				<div className='flex flex-col gap-12'>
+				<div className='flex flex-col gap-10'>
 					<div className='font-semibold'>
 						<h3 className='font-semibold text-gray-400 mb-3'>Gestao</h3>
 						<ul className='flex flex-col gap-2'>
@@ -95,38 +99,42 @@ export default function Home() {
 							</li>
 						</ul>
 					</div>
-					<div className='font-semibold'>
-						<h3 className='font-semibold text-gray-400 mb-3'>CONFIGURAÇÕES</h3>
-						<ul className='flex flex-col gap-2'>
-							<li className='flex items-center gap-3 text-gray-400 cursor-pointer'>
-								<UserCircleIcon className='w-5 ' />
-								<p>Meu perfil</p>
-							</li>
-							<li className='flex items-center gap-3 text-gray-400 cursor-pointer'>
-								<BriefcaseIcon className='w-5 text-gray-400' />
-								<p>Minha empresa</p>
-							</li>
-						</ul>
-					</div>
+
 					<div className='flex items-center gap-1 text-red-500 font-bold'>
 						<ArrowRightStartOnRectangleIcon className='w-6' />
 						<p>Sair</p>
 					</div>
+					<div className='flex flex-col items-center gap-2 mt-12'>
+						<p className='font-semibold text-gray-500'>® Gabriel Pimenta</p>
+						<div className='flex gap-4 text-gray-500'>
+							<Link href='mailto:gabrielpimenttas@gmail.com' target='_blank'>
+								<MdOutlineEmail width={64} className='text-xl cursor-pointer' />
+							</Link>
+
+							<Link href='https://github.com/BielPimentaDev' target='_blank'>
+								<FaGithub className='text-xl cursor-pointer' />
+							</Link>
+
+							<Link href='https://wa.me/5521964811623' target='_blank'>
+								<FaWhatsapp className='text-xl cursor-pointer' />
+							</Link>
+						</div>
+					</div>
 				</div>
 			</nav>
 
-			<div className='lg:mr-12 mt-4 lg:pl-4 flex-1 lg:ml-[300px]'>
-				<header className='flex items-center lg:justify-between mb-8 lg:mr-0 mx-4 '>
-					<button className='lg:hidden block mr-6'>
+			<div className='md:mr-12 mt-4 md:pl-4 flex-1 md:ml-[300px]'>
+				<header className='flex items-center md:justify-between mb-8 md:mr-0 mx-4 '>
+					<button className='md:hidden block mr-6'>
 						<Bars3Icon className='w-6' />
 					</button>
 					<h2 className='font-bold text-3xl'>Obras</h2>
-					<h2 className='lg:ml-0 ml-auto'>
+					<h2 className='md:ml-0 ml-auto'>
 						Olá, <span className='font-bold'>Henrique!</span>
 					</h2>
 				</header>
 
-				<div className='flex gap-4 items-end justify-between mb-12 lg:mx-0 mx-4'>
+				<div className='flex gap-4 items-end justify-between mb-12 md:mx-0 mx-4'>
 					<div className='flex gap-2'>
 						<div className='relative p-1 border-gray-400 border rounded-lg appearance-none'>
 							<input
@@ -140,7 +148,7 @@ export default function Home() {
 							Buscar
 						</button>
 					</div>
-					<div className='lg:block hidden'>
+					<div className='md:block hidden'>
 						<p className='font-bold text-sm mb-2'>Ordenaçao</p>
 						<div className='relative'>
 							<select
@@ -157,7 +165,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className='lg:block hidden'>
+					<div className='md:block hidden'>
 						<p className='font-bold text-sm mb-2'>Status da obra</p>
 						<div className='relative'>
 							<select
@@ -174,7 +182,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<button className='hidden lg:block border border-purple-700 px-6 py-2 rounded-full text-purple-700 font-semibold text-sm '>
+					<button className='hidden md:block border border-purple-700 px-6 py-2 rounded-full text-purple-700 font-semibold text-sm '>
 						<div className='flex items-center '>
 							<PlusIcon className='w-6' />
 							Adicionar obra
@@ -182,7 +190,7 @@ export default function Home() {
 					</button>
 				</div>
 
-				<div className=' gap-6 grid lg:grid-cols-2 grid-cols-1 place-items-center '>
+				<div className=' gap-6 grid md:grid-cols-2 grid-cols-1 place-items-center '>
 					<RoomCard complete />
 					<RoomCard />
 					<RoomCard />

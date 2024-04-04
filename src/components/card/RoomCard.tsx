@@ -11,7 +11,7 @@ interface RoomCardInterface {
 
 export default function RoomCard(props: RoomCardInterface) {
 	return (
-		<div className='bg-white  lg:px-0 px-3'>
+		<div className='bg-white  md:px-0 px-3'>
 			<Image src={Room} alt='room' className='h-48 ' />
 			<div className='p-4'>
 				<div className='flex justify-between items-start'>
